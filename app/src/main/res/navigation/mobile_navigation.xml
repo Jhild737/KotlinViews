@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_today">
+
+    <fragment
+        android:id="@+id/nav_today"
+        android:name="com.example.accuweatherview.ui.home.HomeFragment"
+        android:label="@string/title_nav_today"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_radar"
+        android:name="com.example.accuweatherview.ui.home.HomeFragment"
+        android:label="Radar"
+        tools:layout="@layout/fragment_radar" />
+
+    <fragment
+        android:id="@+id/nav_hourly"
+        android:name="com.example.accuweatherview.ui.dashboard.DashboardFragment"
+        android:label="Hourly"
+        tools:layout="@layout/fragment_daily" />
+
+    <fragment
+        android:id="@+id/nav_weekly"
+        android:name="com.example.accuweatherview.ui.notifications.NotificationsFragment"
+        android:label="@string/title_nav_weekly"
+        tools:layout="@layout/fragment_weekly" />
+</navigation>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AccuweatherView</string>
+    <string name="title_home">Home</string>
+    <string name="title_nav_radar">Radar</string>
+    <string name="title_nav_daily">Hourly</string>
+    <string name="title_nav_today">Today</string>
+    <string name="title_nav_weekly">Weekly</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

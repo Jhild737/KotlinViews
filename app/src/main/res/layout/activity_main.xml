@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="inherit"
+    android:layoutMode="opticalBounds"
+    app:layout_anchorGravity="end">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
+
+            app:toolbarId="@+id/toolbar">
+
+
+            <EditText
+                android:id="@+id/editTextTextPostalAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:ems="10"
+                android:hint="Enter your city"
+                android:inputType="textPostalAddress"
+                android:maxEms="20dp"
+                android:text="Pick Location"
+                android:textAlignment="center" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+
+
+        android:layout_height="806dp"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:layoutMode="opticalBounds"
+        app:layout_anchorGravity="center|top"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        app:layout_dodgeInsetEdges="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center|start|top"
+            android:background="#3F51B5"
+            android:layoutMode="clipBounds"
+            android:paddingTop="?attr/actionBarSize">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ScrollView
+                    android:id="@+id/scrollView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:clipChildren="true"
+                    android:clipToPadding="true"
+                    android:fadingEdge="vertical"
+                    android:fillViewport="true"
+                    android:isScrollContainer="true"
+                    android:layoutDirection="inherit"
+                    android:scrollbarStyle="insideInset"
+                    app:layout_constrainedHeight="false"
+                    app:layout_constrainedWidth="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0">
+
+                </ScrollView>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="#8AFFFFFF"
+                    android:backgroundTint="#A18E24AA"
+                    android:clipChildren="false"
+                    android:gravity="end"
+                    android:layoutDirection="inherit"
+                    android:layoutMode="opticalBounds"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="clip_vertical|center_horizontal|center_vertical"
+                            android:gravity="center"
+                            android:text="No Rain in the next 60 mins"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp"
+                            android:visibility="visible" />
+
+                        <androidx.fragment.app.FragmentContainerView
+                            android:id="@+id/fragmentContainerView2"
+                            android:name="com.example.accuweatherview.radar"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="clip_vertical"
+                            android:minHeight="450dp"
+                            app:layout_insetEdge="none" />
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center|top"
+                            app:srcCompat="@drawable/ic_baseline_access_time_24" />
+
+                        <androidx.fragment.app.FragmentContainerView
+                            android:id="@+id/nav_host_fragment_activity_main"
+                            android:name="androidx.navigation.fragment.NavHostFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="bottom|end"
+                            app:defaultNavHost="true"
+                            app:navGraph="@navigation/mobile_navigation" />
+
+                    </FrameLayout>
+
+                    <View
+                        android:id="@+id/divider8"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:background="?android:attr/listDivider" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:divider="@android:drawable/title_bar_tall"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clipChildren="true"
+                            android:clipToPadding="false"
+                            android:divider="@android:drawable/divider_horizontal_dark"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp">
+
+                            <TextView
+                                android:id="@+id/txt_overnight"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Overnight"
+                                android:textAlignment="center"
+                                android:textColor="#FFFFFF" />
+
+                            <ImageView
+                                android:id="@+id/imageView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:cropToPadding="false"
+                                app:srcCompat="@drawable/ic_baseline_device_thermostat_24" />
+
+                            <TextView
+                                android:id="@+id/txt_temporaru"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|fill"
+                                android:text="21F"
+                                android:textAlignment="center"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                                android:textColor="#FFFFFF"
+                                android:textSize="18sp"
+                                android:textStyle="bold|italic" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/divider6"
+                            android:layout_width="4dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0"
+                            android:background="?android:attr/listDivider" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginRight="2dp"
+                            android:orientation="vertical"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp">
+
+                            <TextView
+                                android:id="@+id/txt_hii"
+                                android:layout_width="75dp"
+                                android:layout_height="wrap_content"
+                                android:background="#0003A9F4"
+                                android:gravity="center_horizontal"
+                                android:text="Today"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                                android:textColor="#FFFFFF" />
+
+                            <ImageView
+                                android:id="@+id/imageView3"
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                app:srcCompat="@drawable/ic_baseline_wb_sunny_24" />
+
+                            <TextView
+                                android:id="@+id/textView8"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:autoText="true"
+                                android:gravity="top"
+                                android:minHeight="48dp"
+                                android:text="33F"
+                                android:textAlignment="center"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:textColor="#FFFFFF"
+                                android:textSize="18sp"
+                                android:textStyle="bold|italic"
+                                app:autoSizeTextType="none"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/divider7"
+                            android:layout_width="4dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0"
+                            android:background="?android:attr/listDivider" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp">
+
+                            <TextView
+                                android:id="@+id/textView9"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Tomorrow"
+                                android:textAlignment="center"
+                                android:textColor="#FFFFFF" />
+
+                            <ImageView
+                                android:id="@+id/imageView2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/ic_baseline_cloud_queue_24" />
+
+                            <TextView
+                                android:id="@+id/txt_precip"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Cloudy"
+                                android:textAlignment="center"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:textColor="#FFFFFF"
+                                android:textSize="18sp"
+                                android:textStyle="bold|italic" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutMode="clipBounds"
+        android:visibility="visible"
+        app:layout_anchor="@+id/nestedScrollView"
+        app:layout_anchorGravity="bottom|center">
+
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                app:srcCompat="@drawable/ic_baseline_cloud_queue_24" />
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_baseline_access_time_24" />
+
+            <com.google.android.material.bottomappbar.BottomAppBar
+                android:id="@+id/bottomAppBar"
+                style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                app:barrierDirection="top"
+                app:flow_verticalBias="1"
+                app:layout_constrainedHeight="true"
+                app:layout_constrainedWidth="true" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    "
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
